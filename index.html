@@ -24,7 +24,11 @@
     <main id="app">
       <nav id="character-nav">
         <ul class="characters">
-          <theherothumb v-for="hero in heroData" :hero="hero"></theherothumb>
+          <theherothumb
+            @loadlbdata="loadLightbox"
+            v-for="hero in heroData"
+            :hero="hero"
+          ></theherothumb>
         </ul>
       </nav>
 
@@ -35,6 +39,10 @@
           character
         </p>
       </article>
+      <!-- start lightbox-->
+
+      <thelightbox></thelightbox>
+      <!-- end lightbox-->
     </main>
     <!-- make this a sticky footer so it's always at the bottom-->
     <footer class="sticky_footer">
